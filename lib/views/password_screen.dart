@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:oraan_flutter/home_section.dart';
 import 'package:oraan_flutter/widgets/custom_button.dart';
 import 'package:oraan_flutter/widgets/custom_text.dart';
 import 'package:oraan_flutter/widgets/custom_text_field.dart';
@@ -68,6 +69,13 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 CustomButton(
                   text: 'LOG IN',
                   width: width * 0.3,
+                  buttonFunction:  () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => MainScreen(),
+                      ),
+                    );
+                  },
                 ),
                 SizedBox(
                   height: height * 0.3,
