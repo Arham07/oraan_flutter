@@ -10,12 +10,12 @@ class SingleSelectCountry with ChangeNotifier {
 
   late String _selectedItem;
 
-  UnmodifiableListView<String> get items => UnmodifiableListView(this._items);
+  UnmodifiableListView<String> get items => UnmodifiableListView(_items);
 
-  String get selected => this._selectedItem;
+  String get selectedItem => _selectedItem;
 
   set selected(final String item) {
-    this._selectedItem = item;
-    this.notifyListeners();
+    _selectedItem = item;
+    notifyListeners();
   }
 }

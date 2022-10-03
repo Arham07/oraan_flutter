@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                       textWeight: FontWeight.w400,
                     ),
                     CustomText(
-                      text: sc.selected,
+                      text: sc.selectedItem,
                       textFont: 18,
                       textColor: Colors.black87,
                       textWeight: FontWeight.w400,
