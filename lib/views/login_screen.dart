@@ -6,7 +6,9 @@ import 'package:oraan_flutter/views/password_screen.dart';
 import 'package:oraan_flutter/widgets/custom_login_header.dart';
 import 'package:oraan_flutter/widgets/custom_password_screen.dart';
 import 'package:oraan_flutter/widgets/custom_text.dart';
+import 'package:provider/provider.dart';
 
+import '../provider/name_provider.dart';
 import '../widgets/custom_text_field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,6 +19,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController _numberEditingController =
+      TextEditingController();
+  final TextEditingController _nameEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -28,13 +34,16 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               children: [
                 CustomLoginHeader(),
-                CustomText(
+                const CustomText(
                   text: 'Enter phone number registered with Oraan',
                   textColor: Colors.black,
                   textWeight: FontWeight.w400,
                   textFont: 17,
                 ),
-                CustomPasswordScreen(),
+                CustomPasswordScreen(
+                  numberEditingController: _numberEditingController,
+                  nameEditingController: _nameEditingController,
+                ),
                 SizedBox(
                   height: height * 0.2,
                 ),
@@ -42,6 +51,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   text: 'CONTINUE',
                   width: width * 0.08,
                   buttonFunction: () {
+                    Provider.of<NameProvider>(context, listen: false)
+                        .saveName(_numberEditingController.text);
+                    Provider.of<NameProvider>(context, listen: false)
+                        .saveName(_nameEditingController.text);
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => PasswordScreen(),

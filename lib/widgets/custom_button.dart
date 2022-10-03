@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class CustomButton extends StatelessWidget {
   final String text;
   final void Function()? buttonFunction;
@@ -14,34 +13,35 @@ class CustomButton extends StatelessWidget {
 
   CustomButton(
       {Key? key,
-        required this.text,
-        this.buttonFunction,
-        this.height,
-        this.width,
-        this.customFontSize,
-        this.buttonColor, this.customRawButton, this.fontWeight, this.textColor})
+      required this.text,
+      this.buttonFunction,
+      this.height,
+      this.width,
+      this.customFontSize,
+      this.buttonColor,
+      this.customRawButton,
+      this.fontWeight,
+      this.textColor})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-
       width: double.infinity,
       height: height ?? MediaQuery.of(context).size.height * 0.057,
       padding: EdgeInsets.symmetric(
         horizontal: width ?? MediaQuery.of(context).size.width * 0.12,
-
       ),
-           child: RawMaterialButton(
-        fillColor: buttonColor ?? Colors.blue,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-        elevation: 0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25),
+      ),
+      child: ElevatedButton(
         onPressed: buttonFunction,
         child: Text(
           text,
           style: TextStyle(
-              fontWeight: fontWeight??FontWeight.w500,
-              color:textColor?? Colors.white,
+              fontWeight: fontWeight ?? FontWeight.w500,
+              color: textColor ?? Colors.white,
               fontSize: customFontSize ?? 16),
         ),
       ),

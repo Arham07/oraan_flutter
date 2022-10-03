@@ -12,12 +12,16 @@ class PhoneNumber extends StatefulWidget {
 }
 
 class _PhoneNumberState extends State<PhoneNumber> {
+  final TextEditingController _numberEditingController =
+      TextEditingController();
+  final TextEditingController _nameEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Column(
-      children:  [
+      children: [
         Align(
           alignment: Alignment.topLeft,
           child: CustomText(
@@ -27,8 +31,10 @@ class _PhoneNumberState extends State<PhoneNumber> {
             textFont: 20,
           ),
         ),
-        CustomPasswordScreen(),
-
+        CustomPasswordScreen(
+          numberEditingController: _numberEditingController,
+          nameEditingController: _nameEditingController,
+        ),
       ],
     );
   }

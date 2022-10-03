@@ -5,9 +5,12 @@ import 'package:oraan_flutter/widgets/custom_button.dart';
 import 'package:oraan_flutter/widgets/custom_text.dart';
 import 'package:oraan_flutter/widgets/custom_text_field.dart';
 import 'package:oraan_flutter/widgets/custom_login_header.dart';
+import 'package:provider/provider.dart';
+
+import '../provider/name_provider.dart';
 
 class PasswordScreen extends StatefulWidget {
-  const PasswordScreen({Key? key}) : super(key: key);
+  const PasswordScreen({Key? key,}) : super(key: key);
 
   @override
   State<PasswordScreen> createState() => _PasswordScreenState();
@@ -25,9 +28,11 @@ class _PasswordScreenState extends State<PasswordScreen> {
           child: Center(
             child: Column(
               children: [
-                CustomLoginHeader(onPressed: () {
-                  Navigator.of(context).pop();
-                },),
+                CustomLoginHeader(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                ),
                 CustomTextField(
                   text: 'Phone Number',
                   isObscure: _isObscure,
@@ -69,7 +74,7 @@ class _PasswordScreenState extends State<PasswordScreen> {
                 CustomButton(
                   text: 'LOG IN',
                   width: width * 0.3,
-                  buttonFunction:  () {
+                  buttonFunction: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (context) => MainScreen(),

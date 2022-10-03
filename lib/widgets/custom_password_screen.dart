@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-
-import '../views/create_new_account/create_new_account.dart';
-import '../views/password_screen.dart';
-import 'custom_button.dart';
+import 'package:oraan_flutter/provider/name_provider.dart';
+import 'package:provider/provider.dart';
+import '../main.dart';
+import '../provider/country_provider.dart';
 import 'custom_text_field.dart';
 
 class CustomPasswordScreen extends StatefulWidget {
-  const CustomPasswordScreen({Key? key}) : super(key: key);
+  const CustomPasswordScreen(
+      {Key? key,
+      required this.numberEditingController,
+      required this.nameEditingController})
+      : super(key: key);
+  final TextEditingController numberEditingController;
+  final TextEditingController nameEditingController;
 
   @override
   State<CustomPasswordScreen> createState() => _CustomPasswordScreenState();
@@ -15,8 +21,12 @@ class CustomPasswordScreen extends StatefulWidget {
 class _CustomPasswordScreenState extends State<CustomPasswordScreen> {
   final psList = ['Pakistan (+92)', 'United States (+1)'];
   String? _selectedVal;
+  String name = '';
+  String number = '';
+
   @override
   Widget build(BuildContext context) {
+    final sc = Provider.of<SingleSelectCountry>(context, listen: false);
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Column(
@@ -34,19 +44,46 @@ class _CustomPasswordScreenState extends State<CustomPasswordScreen> {
                 ),
               ),
               value: _selectedVal,
-              items: psList
+              items: sc.items
                   .map((e) => DropdownMenuItem(
-                        child: Text(e),
                         value: e,
+                        child: Text(e),
                       ))
                   .toList(),
               onChanged: (val) {
-                val = _selectedVal as String;
+                sc.selected = val!;
               }),
         ),
         CustomTextField(
           text: 'Phone Number',
+          onChangedFunction: (value) {
+            setState(() {
+              name = value!;
+            });
+          },
+          onSubmitFunction: (value) {
+            setState(() {
+              name = value!;
+            });
+          },
+          controller: widget.numberEditingController,
         ),
+        CustomTextField(
+          text: 'User Name',
+          type: TextInputType.text,
+          onChangedFunction: (value) {
+            setState(() {
+              name = value!;
+            });
+          },
+          onSubmitFunction: (value) {
+            setState(() {
+              name = value!;
+            });
+          },
+          controller: widget.nameEditingController,
+        ),
+        // Text('${Provider.of<NumberProvider>(context).getNumber}')
       ],
     );
   }

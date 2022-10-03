@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:oraan_flutter/widgets/custom_button.dart';
 import 'package:oraan_flutter/widgets/custom_text.dart';
+import 'package:provider/provider.dart';
+
+import '../main.dart';
+import '../provider/country_provider.dart';
+import '../provider/name_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final sc = Provider.of<SingleSelectCountry>(context, listen: false);
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return SafeArea(
@@ -26,11 +32,17 @@ class HomeScreen extends StatelessWidget {
                       textColor: Colors.black87,
                       textWeight: FontWeight.w400,
                     ),
+                    CustomText(
+                      text: sc.selected,
+                      textFont: 18,
+                      textColor: Colors.black87,
+                      textWeight: FontWeight.w400,
+                    ),
                     const SizedBox(
                       height: 8,
                     ),
-                    const CustomText(
-                      text: 'Arham Javed,',
+                    CustomText(
+                      text: Provider.of<NameProvider>(context).getName,
                       textColor: Colors.black87,
                       textWeight: FontWeight.w400,
                     ),
@@ -143,6 +155,10 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    // Text(
+                    //   "Name:${Provider.of<NameProvider>(context).getName}",
+                    //   style: TextStyle(fontSize: 32, color: Colors.green),
+                    // ),
                   ],
                 ),
                 const Positioned(
