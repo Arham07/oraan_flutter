@@ -1,7 +1,7 @@
 import 'dart:collection';
 import 'package:flutter/material.dart';
 
-class SingleSelectCountry with ChangeNotifier {
+class CountryProvider with ChangeNotifier {
   final List<String> _items = <String>[
     "Pakistan +92",
     "Belgium +11",

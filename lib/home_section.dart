@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oraan_flutter/views/home_screen.dart';
+import 'package:oraan_flutter/views/home_screen/home_screen.dart';
 import 'package:oraan_flutter/views/ocs_screen.dart';
 import 'package:oraan_flutter/views/pay_screen.dart';
 import 'package:oraan_flutter/views/profile_screen.dart';

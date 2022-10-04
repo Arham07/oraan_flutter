@@ -1,13 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:oraan_flutter/components/custom_button.dart';
+import 'package:oraan_flutter/components/custom_text.dart';
+import 'package:oraan_flutter/components/custom_text_field.dart';
 import 'package:oraan_flutter/home_section.dart';
-import 'package:oraan_flutter/widgets/custom_button.dart';
-import 'package:oraan_flutter/widgets/custom_text.dart';
-import 'package:oraan_flutter/widgets/custom_text_field.dart';
-import 'package:oraan_flutter/widgets/custom_login_header.dart';
-import 'package:provider/provider.dart';
+import 'package:oraan_flutter/views/login_screen/widget/custom_login_header.dart';
 
-import '../provider/name_provider.dart';
 
 class PasswordScreen extends StatefulWidget {
   const PasswordScreen({Key? key,}) : super(key: key);

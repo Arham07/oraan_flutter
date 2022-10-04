@@ -26,7 +26,7 @@ class _CustomPasswordScreenState extends State<CustomPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final sc = Provider.of<SingleSelectCountry>(context, listen: false);
+    final sc = Provider.of<CountryProvider>(context, listen: false);
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Column(

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:oraan_flutter/provider/country_provider.dart';
 import 'package:oraan_flutter/provider/name_provider.dart';
 import 'package:oraan_flutter/provider/number_provider.dart';
-import 'package:oraan_flutter/views/login_screen.dart';
+import 'package:oraan_flutter/views/login_screen/login_screen.dart';
 import 'package:provider/provider.dart';
-import 'dart:collection';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -24,9 +22,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => NameProvider(),
         ),
-        ChangeNotifierProvider<SingleSelectCountry>(
+        ChangeNotifierProvider<CountryProvider>(
           create: (_) {
-            return SingleSelectCountry();
+            return CountryProvider();
           },
         ),
       ],

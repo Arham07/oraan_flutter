@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:oraan_flutter/widgets/custom_button.dart';
-import 'package:oraan_flutter/widgets/custom_text.dart';
 import 'package:provider/provider.dart';
-
-import '../main.dart';
 import '../provider/country_provider.dart';
 import '../provider/name_provider.dart';
+import 'package:oraan_flutter/components/custom_button.dart';
+import 'package:oraan_flutter/components/custom_text.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final sc = Provider.of<SingleSelectCountry>(context, listen: false);
+    final sc = Provider.of<CountryProvider>(context, listen: false);
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return SafeArea(

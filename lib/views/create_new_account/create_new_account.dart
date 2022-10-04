@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oraan_flutter/views/create_new_account/phone_number.dart';
-import 'package:oraan_flutter/widgets/custom_password_screen.dart';
 
-import '../../widgets/custom_button.dart';
-import '../../widgets/custom_text.dart';
 
 class CreateNewAccount extends StatefulWidget {
   const CreateNewAccount({Key? key}) : super(key: key);
@@ -17,7 +14,6 @@ class _CreateNewAccountState extends State<CreateNewAccount> {
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SafeArea(
         child: Stepper(
