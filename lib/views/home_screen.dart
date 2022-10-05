@@ -5,14 +5,15 @@ import '../provider/name_provider.dart';
 import 'package:oraan_flutter/components/custom_button.dart';
 import 'package:oraan_flutter/components/custom_text.dart';
 
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final sc = Provider.of<CountryProvider>(context, listen: false);
-    double height = MediaQuery.of(context).size.height;
+    final selectedCountry =
+        Provider.of<CountryProvider>(context, listen: false);
+    final nameProvider = Provider.of<NameProvider>(context, listen: false);
+
     double width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                       textWeight: FontWeight.w400,
                     ),
                     CustomText(
-                      text: sc.selectedItem,
+                      text: selectedCountry.selectedItem,
                       textFont: 18,
                       textColor: Colors.black87,
                       textWeight: FontWeight.w400,
@@ -41,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                       height: 8,
                     ),
                     CustomText(
-                      text: Provider.of<NameProvider>(context).getName,
+                      text: nameProvider.getName,
                       textColor: Colors.black87,
                       textWeight: FontWeight.w400,
                     ),
