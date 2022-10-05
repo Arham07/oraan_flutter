@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:oraan_flutter/provider/country_provider.dart';
-import 'package:oraan_flutter/provider/name_provider.dart';
-import 'package:oraan_flutter/provider/number_provider.dart';
-import 'package:oraan_flutter/views/login_screen/login_screen.dart';
+import 'package:oraan_flutter/views/login_screen.dart';
 import 'package:provider/provider.dart';
 
+import 'business_logic/country_provider.dart';
+import 'business_logic/name_provider.dart';
+import 'business_logic/number_provider.dart';
+
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

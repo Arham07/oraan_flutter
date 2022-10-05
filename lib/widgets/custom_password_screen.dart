@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oraan_flutter/provider/name_provider.dart';
 import 'package:provider/provider.dart';
-import '../main.dart';
-import '../provider/country_provider.dart';
+import '../business_logic/country_provider.dart';
 import 'custom_text_field.dart';
 
 class CustomPasswordScreen extends StatefulWidget {

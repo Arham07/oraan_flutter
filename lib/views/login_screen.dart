@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:oraan_flutter/components/custom_password_screen.dart';
 import 'package:oraan_flutter/views/create_new_account/create_new_account.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:oraan_flutter/components/custom_button.dart';
-import 'package:oraan_flutter/components/custom_text.dart';
-import 'package:oraan_flutter/views/login_screen/widget/custom_login_header.dart';
+import '../business_logic/name_provider.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/custom_login_header.dart';
+import '../widgets/custom_password_screen.dart';
+import '../widgets/custom_text.dart';
 import 'package:oraan_flutter/views/password_screen.dart';
 import 'package:provider/provider.dart';
-import '../provider/name_provider.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -55,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         .saveName(_nameEditingController.text);
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => PasswordScreen(),
+                        builder: (context) => const PasswordScreen(),
                       ),
                     );
                   },
@@ -69,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   buttonFunction: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => CreateNewAccount(),
+                        builder: (context) => const CreateNewAccount(),
                       ),
                     );
                   },

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oraan_flutter/components/custom_password_screen.dart';
-import 'package:oraan_flutter/components/custom_text.dart';
 
+import '../../widgets/custom_password_screen.dart';
+import '../../widgets/custom_text.dart';
 
 class PhoneNumber extends StatefulWidget {
   const PhoneNumber({Key? key}) : super(key: key);

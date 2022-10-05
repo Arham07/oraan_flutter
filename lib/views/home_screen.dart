@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../provider/country_provider.dart';
-import '../provider/name_provider.dart';
-import 'package:oraan_flutter/components/custom_button.dart';
-import 'package:oraan_flutter/components/custom_text.dart';
+import '../business_logic/country_provider.dart';
+import '../business_logic/name_provider.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/custom_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
