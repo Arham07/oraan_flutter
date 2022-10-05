@@ -56,11 +56,10 @@ class HomeScreen extends StatelessWidget {
                       child: Container(
                         height: 550,
                         width: double.infinity,
-                        margin: EdgeInsets.all(1.5),
+                        margin: const EdgeInsets.all(1.5),
                         padding: const EdgeInsets.symmetric(horizontal: 15),
                         decoration: const BoxDecoration(color: Colors.white),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             const SizedBox(
                               height: 40,
